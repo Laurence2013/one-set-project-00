@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewChildren, AfterViewInit, QueryList, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { map, toArray } from 'rxjs';
+import { map } from 'rxjs';
 
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonFooter } from '@ionic/angular/standalone';
 
@@ -21,7 +21,7 @@ export class HomePage implements AfterViewInit {
   
   public courses = COURSES;
   public startDate = new Date();
-  
+ 
   //@ViewChild(CourseCardComponent) public card?: CourseCardComponent;
   //@ViewChildren(CourseCardComponent) public cards?: QueryList<CourseCardComponent>;
   @ViewChildren(CourseCardComponent, {read: ElementRef}) public cards?: QueryList<CourseCardComponent>;

@@ -23,10 +23,7 @@ export class CourseCardComponent  implements OnInit {
     console.log('Course Card Component button clicked!');
 
     this.courseEmitter.emit(this.course);
-  }
-  public isImageVisible(){
-    return this.course && this.course.iconUrl;
-  }
+  } 
   public cardClass(){
     return {
       'beginner': this.course.category === 'BEGINNER',
@@ -35,5 +32,8 @@ export class CourseCardComponent  implements OnInit {
   }
   public cardStyle(){
     return {'text-decoration': 'underline'};
+  }
+  public isImageVisible(){
+    return this.course && this.course.iconUrl;
   }
 }

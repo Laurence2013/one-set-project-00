@@ -16,7 +16,11 @@
   <button (click)="onCoursesEdited()">Edit Courses</button>
 
   <app-course-card *ngFor="let course of courses; index as i" 
-  (courseSelected)="onCardClicked($event)" [course]="course" [cardIndex]="i"></app-course-card>
+  (courseSelected)="onCardClicked($event)" [course]="course" [cardIndex]="i">
+
+    <img width="50%" alt="Angular logo" [src]="course.iconUrl" /> 
+
+  </app-course-card>
 </ion-content>
 
 <ion-footer>

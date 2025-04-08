@@ -1,9 +1,9 @@
 <ion-card class="course-card" *ngIf="course" [ngClass]="cardClass()">
   <ion-card-header>
     <ion-card-title [ngStyle]="cardStyle()">{{ cardIndex + 1 }} - {{ course.description }}</ion-card-title> 
-  </ion-card-header>  
-  
-  <img width="50%" alt="Angular logo" *ngIf="isImageVisible(); else noImage" [src]="course.iconUrl" />
+  </ion-card-header>    
+
+  <ng-content *ngIf="isImageVisible(); else noImage"></ng-content>
 
   <ng-template #noImage>
     <h2>No image available</h2>
