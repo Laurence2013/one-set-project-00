@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon src="../../assets/icon/logo-apple.svg"></ion-icon>
+			{{ home }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <!--<ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Hello</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+  <div id="container">
+    <ion-icon src="../../assets/icon/accessibility-outline.svg"></ion-icon>
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+	</div>-->
+	
+	<div id="container" *ngIf='courses[0] as course'>
+		<button (click)='onCoursesEdited()'>Edit Courses</button>
+		<!--<app-test-component *ngFor='let course of courses' (courseSelected)='onCourseSelected($event)' [course]='course'>-->
+
+		<app-test-component (courseSelected)='onCourseSelected($event)' [course]='course'>
+			<div #tempCom>
+				<img width='300' alt='Angular Logo' [src]='course.iconUrl'>
+				
+				<h3>{{ course.category }}</h3>
+				<h5>Total Lessons: 5</h5>
+			</div>
+			
+			<div class='course-description'>{{ course.description }}</div>
+			<br>
+			<div class='course-description'>{{ course.longDescription }}</div>
+
+			Edit Description: <textarea></textarea>
+
+		</app-test-component>
+
+		<app-test-component (courseSelected)='onCourseSelected($event)' [course]='course'>
+			<h5>Total Lessons: 5</h5>
+		</app-test-component>
+
+		<!--<app-test-component #testComponent1 (courseSelected)='onCourseSelected($event)' [course]='courses[0]'></app-test-component>
+		<app-test-component #testComponent2 (courseSelected)='onCourseSelected($event)' [course]='courses[1]'></app-test-component>-->
+	</div>
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar>
+		<ion-title>Footer</ion-title>
+	</ion-toolbar>
+</ion-footer>

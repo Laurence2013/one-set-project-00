@@ -1,0 +1,26 @@
+<ion-card class='testComponentContainer' *ngIf='course' [ngClass]='cardClass()'>
+	<ion-card-header>
+		<ion-card-title [ngStyle]='cardStyle()'><b>{{ cardIndex || '' + '' + course.description }}</b></ion-card-title>
+	</ion-card-header>
+	<ng-container>
+		<ng-content *ngIf='isImageVisible(); else noImage'></ng-content>
+
+		<!--<img width="200" alt="" *ngIf='isImageVisible(); else noImage' [src]="course.iconUrl">-->
+		<div>
+			<p>Start Date: {{ currentDate | date }}</p>
+		</div>
+
+		<ng-template #noImage>
+			<p>No Image is available</p>
+		</ng-template>
+
+		<p #testViewChild>Hello ViewChild</p>
+
+		<div class='course-category' [ngSwitch]='course.category'>
+			<div class='category' *ngSwitchCase="'BEGINNER'">Beginner</div>
+		</div>
+
+		<button [ngClass]='isCourseBeginner()' (click)="onCourseViewed()">View Course</button>
+	</ng-container>
+</ion-card>
+

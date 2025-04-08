@@ -1,0 +1,22 @@
+<ion-card class="course-card" *ngIf="course" [ngClass]="cardClass()">
+  <ion-card-header>
+    <ion-card-title [ngStyle]="cardStyle()">{{ cardIndex + 1 }} - {{ course.description }}</ion-card-title> 
+  </ion-card-header>  
+  
+  <img width="50%" alt="Angular logo" *ngIf="isImageVisible(); else noImage" [src]="course.iconUrl" />
+
+  <ng-template #noImage>
+    <h2>No image available</h2>
+  </ng-template>
+
+  <ion-card-subtitle>{{ course.longDescription }}</ion-card-subtitle>
+
+  <ion-card-content class="course-category" [ngSwitch]="course.category">
+    <div class="category" *ngSwitchCase="'BEGGINER'">Beginner</div>
+    <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermadiate</div>
+    <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+    <div class="category" *ngSwitchDefault>All Levels</div>
+  </ion-card-content>
+
+  <button (click)="onCourseViewed()">View Course</button>
+</ion-card>

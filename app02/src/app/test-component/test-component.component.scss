@@ -1,0 +1,17 @@
+.testComponentContainer {
+	display: flex; 
+	flex-direction: column; 
+	align-items: center; 
+	text-align: center;
+}
+.course-card.beginner {
+	background: lightsalmon;
+}
+.courseSpacing1 {
+	background: #fff;
+	padding: 2%;
+}
+.courseSpacing2 {
+	background: lightsalmon;
+	padding: 2%;
+}
