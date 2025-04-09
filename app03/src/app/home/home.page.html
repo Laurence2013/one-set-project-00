@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" id="container" #container>
+<ion-content [fullscreen]="true" id="container">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home</ion-title>
@@ -18,7 +18,10 @@
   <app-course-card *ngFor="let course of courses; index as i" 
   (courseSelected)="onCardClicked($event)" [course]="course" [cardIndex]="i">
 
-    <img width="50%" alt="Angular logo" [src]="course.iconUrl" /> 
+    <app-course-image [src]="course.iconUrl"></app-course-image>
+    <app-course-image [src]="courses[1].iconUrl"></app-course-image>
+    <app-course-image [test99]="test"></app-course-image>
+    <ion-card-subtitle>{{ course.longDescription }}</ion-card-subtitle>
 
   </app-course-card>
 </ion-content>

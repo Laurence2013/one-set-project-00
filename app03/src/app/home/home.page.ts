@@ -3,22 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { map } from 'rxjs';
 
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonFooter } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonFooter, IonCardSubtitle, IonCardHeader } from '@ionic/angular/standalone';
 
 import { CourseCardComponent } from '../course-card/course-card.component';
 import { COURSES } from 'src/db-data';
 
 import { Course } from '../models/course';
+import { CourseImageComponent } from "../course-image/course-image.component";
 
 @Component({
 	selector: 'app-home',
 	templateUrl: 'home.page.html',
 	styleUrls: ['home.page.scss'],
 	standalone: true,
-	imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonFooter, CourseCardComponent, CommonModule],
+	imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonFooter, IonCardSubtitle, CourseCardComponent, CommonModule, CourseImageComponent],
 })
 export class HomePage implements AfterViewInit {
   
+  public test:string = 'Foo testing';
   public courses = COURSES;
   public startDate = new Date();
  
